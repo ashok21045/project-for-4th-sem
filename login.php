@@ -7,8 +7,35 @@ if (isset($_SESSION['showalert']) AND $_SESSION['showalert']== true) {
         <strong>You have successfully signed in.</strong>
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>';
-    unset($_SESSION['showalert']); // एकपटक देखाएपछि हटाइदेयो
+    unset($_SESSION['showalert']);
 }
+
+// logging in
+$alert= false;
+if($_SERVER["REQUEST_METHOD"] == "POST"){
+    include 'partials/_test.php';
+
+    $username = $_POST["username"];
+    $password = $_POST["password"];
+    $exist = false;
+    
+    $sql1= "Select * from user where username= '$username' AND password = '$password' ";
+    $res = mysqli_query($conn, $sql1);
+    $num = mysqli_num_rows($res);
+    if($num==1){
+        $exist = true;
+        
+        $_SESSION['username'] = $username;
+        $_SESSION['exist']=true;
+        header("Location: welcome.php");
+        exit();
+    }
+    else{
+        $alert= true;
+    }
+
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -125,6 +152,18 @@ if (isset($_SESSION['showalert']) AND $_SESSION['showalert']== true) {
 </head>
 
 <body>
+        <!-- alert for the login -->
+        <?php
+          if ($alert){
+        echo '  <div class="alert alert-danger alert-dismissible fade show text-center fixed-top m-0 rounded-0" role="alert">
+        <strong> Wrong username or password!
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>';
+    }
+
+  
+        ?>
+
 
     <div class="wrapper">
         <div class="login-container">
@@ -151,7 +190,15 @@ if (isset($_SESSION['showalert']) AND $_SESSION['showalert']== true) {
     </div>
 
 
+
+
+
+
+    
+
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+
 
 
 
