@@ -18,5 +18,12 @@
     <h1>Welcome 
         <?php echo $_SESSION['username']; ?>
     </h1>
+    <a href="logout.php">Logout</a>
+    <?php
+
+session_unset();
+session_destroy();
+?>
+
 </body>
 </html>
