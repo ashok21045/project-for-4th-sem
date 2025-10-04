@@ -27,7 +27,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         $showalert = true;
         session_start();
         $_SESSION['showalert']= true;
-        header("Location: afterlogin.php");
+        header("Location: login.php");
 
     } 
     else{

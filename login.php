@@ -1,3 +1,15 @@
+<?php
+session_start();
+
+
+if (isset($_SESSION['showalert']) AND $_SESSION['showalert']== true) {
+    echo '<div class="alert alert-success alert-dismissible fade show text-center fixed-top m-0 rounded-0" role="alert">
+        <strong>You have successfully signed in.</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>';
+    unset($_SESSION['showalert']); // एकपटक देखाएपछि हटाइदेयो
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,20 +17,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BrainSpark | Login</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
     <style>
         * {
             box-sizing: border-box;
         }
 
-        body {
-            margin: 0;
+        .wrapper {
             font-family: "Poppins", sans-serif;
             background-color: #0f172a;
             color: white;
+            min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
         }
 
         .login-container {
@@ -112,29 +125,36 @@
 </head>
 
 <body>
-   
-    <div class="login-container">
-        <div class="brand">
-            <img src="logo.png" alt="BrainSpark Logo" class="logo">
-            <h2 class="logo-title">BrainSpark</h2>
-        </div>
 
-        <form class="login-form">
-            <label for="username">Username</label>
-            <input type="text" id="username" placeholder="Enter username" required>
+    <div class="wrapper">
+        <div class="login-container">
+            <div class="brand">
+                <img src="logo.png" alt="BrainSpark Logo" class="logo">
+                <h2 class="logo-title">BrainSpark</h2>
+            </div>
 
-            <label for="password">Password</label>
-            <input type="password" id="password" placeholder="Enter password" required>
+            <form class="login-form" action="login.php" method="POST">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" placeholder="Enter username" required>
 
-            <button type="submit" class="login-btn">Login</button>
-        </form>
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Enter password" required>
 
-        <div class="extra-links">
-            <p>Don't have an account? <a href="signup.php">Sign up</a></p>
-            <p><a href="#">Forgot Password?</a></p>
+                <button type="submit" class="login-btn">Login</button>
+            </form>
+
+            <div class="extra-links">
+                <p>Don't have an account? <a href="signup.php">Sign up</a></p>
+                <p><a href="#">Forgot Password?</a></p>
+            </div>
         </div>
     </div>
-   
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+
+
+
 </body>
 
 </html>
