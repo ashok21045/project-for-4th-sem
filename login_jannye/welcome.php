@@ -163,11 +163,11 @@
     <p>Challenge your mind with fun games & puzzles!</p>
 
     <div class="card-container">
-      <div class="card" onclick="window.location.href='wordle.html'">
+      <div class="card" onclick="window.location.href='../games/wordle.html'">
         <h3>Wordle Game</h3>
         <p>Guess the hidden word within limited attempts.</p>
       </div>
-      <div class="card" onclick="window.location.href='quiz.html'">
+      <div class="card" onclick="window.location.href='../games/quiz.html'">
         <h3>Quiz Game</h3>
         <p>Answer fun quizzes and climb the leaderboard.</p>
       </div>
