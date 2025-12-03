@@ -13,7 +13,7 @@ if (isset($_SESSION['showalert']) AND $_SESSION['showalert']== true) {
 // logging in
 $alert= false;
 if($_SERVER["REQUEST_METHOD"] == "POST"){
-    include 'partials/_test.php';
+    include '../partials/_test.php';
 
     $username = $_POST["username"];
     $password = $_POST["password"];
@@ -168,7 +168,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     <div class="wrapper">
         <div class="login-container">
             <div class="brand">
-                <img src="logo.png" alt="BrainSpark Logo" class="logo">
+                <img src="../partials/logo.png" alt="BrainSpark Logo" class="logo">
                 <h2 class="logo-title">BrainSpark</h2>
             </div>
 

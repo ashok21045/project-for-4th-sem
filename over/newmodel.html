@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BrainSpark</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons for the search lens -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+    <style>
+        body {
+            margin: 0;
+            background: #d8d1d1;
+            font-family: Arial, sans-serif;
+            padding-top: 80px; /* Navbar height */
+        }
+
+        /* Navbar */
+        .navbara {
+            height: 80px;
+            background: white;
+            border-bottom: 1px solid #dcdcdc;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 35px;
+
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        .left-section {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo {
+            height: 40px;
+            width: 40px;
+        }
+
+        .company-name {
+            font-size: 26px;
+            font-weight: bold;
+            color: #1c1c1c; 
+        }
+
+        .menu {
+            display: flex;
+            gap: 50px;
+        }
+
+        .menu a {
+            text-decoration: none;
+            font-size: 20px;
+            color: #333;
+        }
+
+        .menu a:hover {
+            color: #0073ff;
+        }
+
+        /* Search bar with lens icon */
+        .nav-search {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-search input {
+            padding: 8px 14px 8px 40px; /* space for icon */
+            width: 220px;
+            border: 1px solid #c9c9c9;
+            border-radius: 20px;
+            outline: none;
+            font-size: 15px;
+            background-color: #f8f8f8;
+        }
+
+        .nav-search i {
+            position: absolute;
+            left: 12px;
+            font-size: 17px;
+            color: #555;
+        }
+
+        .container{
+            height: 800px;
+            width: 800px;
+        }
+    </style>
+</head>
+<body>
+
+<header class="navbara">
+    <div class="left-section">
+        <img src="../partials/logo.png" alt="Logo" class="logo">
+        <span class="company-name">BrainSpark</span>
+    </div>
+
+    <div class="menu">
+        <a href="#">Home</a>
+        <a href="#">Games</a>
+        <a href="#">About</a>
+        <a href="#">Logout</a>
+    </div>
+
+    <!-- Search bar with icon -->
+    <div class="nav-search">
+        <i class="bi bi-search"></i>
+        <input type="text" placeholder="Search games...">
+    </div>
+</header>
+<br><br>
+<div class="container">
+<div class="row g-0 bg-body-secondary position-relative">
+  <div class="col-md-6 mb-md-0 p-md-4">
+    <img src="poster.png" class="w-100" alt="...">
+  </div>
+  <div class="col-md-6 p-4 ps-md-0">
+    <h5 class="mt-0">Columns with stretched link</h5>
+    <p>Anotherd we’re using it here to give the component a bit of body and size.</p>
+    <a href="#" class="stretched-link">Go somewhere</a>
+  </div>
+</div>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

@@ -40,7 +40,7 @@
         }
         .menu {
             display: flex;
-            gap: 200px;
+            gap: 36px;
         }
         .menu a {
             color: #fff;
@@ -94,6 +94,8 @@
             display: flex;
             gap: 38px;
             justify-content: center;
+            padding-bottom: 60px ;
+            margin-top: 30px;
         }
         .panel {
             background: rgba(255,255,255,0.08);
@@ -194,9 +196,9 @@
     </nav>
     <hr style = " background-color: #464545ff; height: 1px; border: none;">
     <section class="main-content">
-        <h1>Ignite Your Mind <span>🔥</span></h1>
-        <p>Play Wordle & Quiz. Challenge your brain, compete with friends, and win!</p>
-        <button class="start-btn" onclick="window.location.href='login.php'">Start Playing</button>
+        
+        <h1>Welcome to BrainSpark </h1>
+        <h2>Ignite Your Brain <span>🔥</span></h2>
         <div class="game-panels">
             <div class="panel">
                 <h2>Wordle</h2>
@@ -209,7 +211,11 @@
                 <button class="play-btn">Play Now</button>
             </div>
         </div>
+                <p>Play Wordle & Quiz. Challenge your brain, compete with friends, and win!</p>
+
+
     </section>
+
     <hr style = " background-color: #464545ff; height: 1px; border: none;">
      <footer class="footer">
         © 2025 BrainSpark | Built by Ashok

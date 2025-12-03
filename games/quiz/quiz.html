@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BrainSpark | Quiz</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Montserrat', Arial, sans-serif;
+            background: #cbe6e4;
+            color: #fff;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 48px 0 48px;
+        }
+
+        .logo-group {
+            display: flex;
+            align-items: center;
+            gap: 13px;
+        }
+
+        .logo-group img {
+            height: 80px;
+            width: auto;
+            display: block;
+        }
+
+        .logo-group .brand-text {
+            font-weight: 700;
+            font-size: 2rem;
+            color: #c00a0a;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .menu {
+            display: flex;
+            gap: 36px;
+        }
+
+        .menu a {
+            color: #14e9bb;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.14rem;
+            transition: opacity 0.2s;
+        }
+
+        .menu a:hover {
+            opacity: 0.6;
+        }
+
+        @media (max-width: 700px) {
+            .navbar {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 15px 16px 0 16px;
+            }
+
+            .logo-group .brand-text {
+                font-size: 1.3rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="logo-group">
+            <img src="logo2.png" alt="BrainSpark Logo">
+            <span class="brand-text">BrainSpark</span>
+        </div>
+
+        <div class="menu">
+            <a href="#">Home</a>
+            <a href="#">Games</a>
+            <a href="#">About</a>
+            <a href="#">Login</a>
+        </div>
+    </nav>
+
+    <hr style="background-color: #464545ff; height: 1px; border: none;">
+
+</body>
+</html>

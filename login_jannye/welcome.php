@@ -31,7 +31,6 @@
 
     header {
       padding: 15px 40px;
-      background: #1c1c1c;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -149,7 +148,7 @@
 <body>
   <header>
     <div class="brand">
-      <img src="logo.png" alt="BrainSpark Logo">
+      <img src="../partials/logo.png" alt="BrainSpark Logo">
       <h1>BrainSpark</h1>
     </div>
     <div class="user-info">
@@ -157,6 +156,9 @@
       <button class="logout" onclick="window.location.href='logout.php'">Logout</button>
     </div>
   </header>
+
+    <hr style = " background-color: #464545ff; height: 1px; border: none; width: 100%;">
+
 
   <main>
     <h2>Welcome to BrainSpark</h2>
