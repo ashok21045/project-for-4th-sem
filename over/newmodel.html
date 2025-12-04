@@ -3,417 +3,426 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BrainSpark</title>
-
+    <title>BrainSpark | Play & Learn</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-
     <style>
         body {
             margin: 0;
-            background: #f2efef;
-            font-family: Arial, sans-serif;
-            padding-top: 80px; 
+            background: linear-gradient(135deg, #f2f6fa 0%, #e6ecf5 100%);
+            font-family: 'Segoe UI', Arial, sans-serif;
+            padding-bottom: 80px;
         }
-
-       
-       .navbara {
-            height: 80px;
-            background: white;
-            border-bottom: none;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 35px;
-
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 1000;
-
-            box-shadow: 0 2px 30px rgba(0, 0, 0, 0.4);
+        .navbar {
+            background: #fff;
+            box-shadow: 0 4px 20px rgba(16,30,54,.09);
+            min-height: 78px;
+            padding-left: 50px;
+            padding-right: 50px;
         }
-
-
-        .left-section {
+        .navbar-brand {
             display: flex;
             align-items: center;
             gap: 12px;
+            font-size: 2rem;
+            font-weight: 700;
+            color: #092365 !important;
         }
-
-        .logo {
-            height: 40px;
-            width: 40px;
-            border-radius: 50%;
+        .navbar-brand img {
+            height: 44px; width: 44px; border-radius: 50%; box-shadow: 0 2px 6px #3154a129;
         }
-
-        .company-name {
-            font-size: 26px;
-            font-weight: bold;
-            color: #05297c; 
+        .navbar-nav .nav-link {
+            color: #22334e !important;
+            font-size: 1.1rem;
+            font-weight: 500;
+            margin-right: 26px;
+            transition: all 0.15s;
+            border-radius: 7px;
         }
-
-        .menu {
-            display: flex;
-            gap: 0px;
+        .navbar-nav .nav-link:hover, .navbar-nav .active>.nav-link {
+            background: #f0f4fb;
+            color: #1750c3 !important;
         }
-
-        .menu a {
-            text-decoration: none;
-            font-size: 20px;
-            color: #333;
-            padding-left: 25px;
-            padding-right: 25px;
-            border-radius: 9px;
-        }
-
-        .menu a:hover {
-            color: #090909;
-            background-color: #efecec;
-        }
-
         .nav-search {
             position: relative;
-            display: flex;
-            align-items: center;
         }
-
         .nav-search input {
-            padding: 8px 14px 8px 40px;
-            width: 220px;
-            border: 1px solid #c9c9c9;
-            border-radius: 20px;
-            outline: none;
-            font-size: 15px;
-            background-color: #f8f8f8;
+            border-radius: 30px;
+            padding-left: 40px;
+            width: 240px;
+            border: 1px solid #c1d0ec;
+            font-size: 1rem;
+            background: #f6f9ff;
         }
-
-        .nav-search i {
+        .nav-search .bi-search {
             position: absolute;
-            left: 12px;
-            font-size: 17px;
-            color: #555;
+            left: 13px;
+            top: 10px;
+            color: #9aa5be;
         }
-
-        /*  GAME CARD DESIGN */
+        .games-title {
+            margin-top: 42px;
+            font-size: 2rem;
+            font-weight: 700;
+            color: #092365;
+            text-shadow: 0 2px 12px #c5d7fa33;
+        }
         .game-card {
-            background: white;
-            border-radius: 20px;
+            background: #fff;
+            border-radius: 1.4rem;
+            box-shadow: 0 4px 24px rgba(35,65,120,0.13);
             overflow: hidden;
-            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
-            transition: .25s;
+            min-height: 420px;
+            transition: transform 0.21s, box-shadow 0.21s;
         }
-
         .game-card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0px 8px 22px rgba(0,0,0,0.25);
+            transform: translateY(-7px) scale(1.03);
+            box-shadow: 0 8px 32px rgba(22,40,85,0.18);
         }
-
         .game-img {
             width: 100%;
-            height: 220px;
+            height: 210px;
             object-fit: cover;
+            border-top-left-radius: 1.4rem;
+            border-top-right-radius: 1.4rem;
         }
-
         .game-body {
-            padding: 20px;
+            padding: 25px 18px 22px 18px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 170px;
         }
-
+        .game-body h4 {
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: #153778;
+            margin-bottom: 0.55rem;
+        }
+        .game-body p {
+            color: #4e5c74;
+            font-size: 1rem;
+            margin-bottom: 1.1rem;
+        }
         .play-btn {
-            padding: 8px 20px;
-            border-radius: 20px;
+            width: 100%;
+            border-radius: 25px;
+            background: linear-gradient(90deg,#1550bf,#3872e1 95%);
+            border: none;
+            font-weight: 600;
+            font-size: 1rem;
+            padding: 9px 0;
         }
-
         .rating {
             display: flex;
             align-items: center;
-            gap: 6px;
-            margin-bottom: 8px;
+            gap: 4px;
+            font-size: 1rem;
+            margin-bottom: 2px;
         }
-
         .rating i {
-            color: #f5b810; /* golden yellow */
-            font-size: 18px;
+            color: #fbc105;
         }
-
         .rating span {
             font-weight: bold;
-            color: #444;
+            color: #355196;
         }
-
+        .footer {
+            background: linear-gradient(-45deg,#3469b3 0%, #092365 100%);
+            color: #fff;
+            padding: 56px 0 24px;
+            margin-top: 100px;
+        }
+        .footer-logo {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+        .footer-links a {
+            color: #cce2ff;
+            display: block;
+            margin-bottom: 10px;
+            text-decoration: none;
+            transition: color 0.13s;
+        }
+        .footer-links a:hover {
+            color: #fff;
+            text-decoration: underline;
+        }
+        .social-icons a {
+            color: #cce2ff;
+            font-size: 1.30rem;
+            margin-right: 18px;
+            transition: color 0.13s;
+        }
+        .social-icons a:hover {
+            color: #fff;
+        }
+        .footer-bottom {
+            border-top: 1px solid #cce2ff33;
+            margin-top: 24px;
+            padding-top: 18px;
+            color: #bdd6f9;
+            text-align: center;
+            font-size: 1rem;
+        }
     </style>
 </head>
-
 <body>
-
-<header class="navbara">
-    <div class="left-section">
-        <img src="../partials/logo2.png" alt="Logo" class="logo">
-        <span class="company-name">BrainSpark</span>
-    </div>
-
-    <div class="menu">
-        <a href="#">Home</a><span>|</span>
-        <a href="#">Games</a><span>|</span>
-        <a href="#">About</a><span>|</span>
-        <a href="#">Logout</a>
-    </div>
-
-    <div class="nav-search">
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-light fixed-top">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">
+      <img src="../partials/logo2.png" alt="BrainSpark Logo">
+      BrainSpark
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navBarToggle" aria-controls="navBarToggle" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navBarToggle">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#games">Games</a></li>
+        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Logout</a></li>
+      </ul>
+      <form class="d-flex ms-lg-4 nav-search">
         <i class="bi bi-search"></i>
-        <input type="text" placeholder="Search games...">
+        <input class="form-control me-2" type="search" placeholder="Search games..." aria-label="Search">
+      </form>
     </div>
-</header>
+  </div>
+</nav>
 
-<div class="container mt-5">
-
-    <h2 class="fw-bold mb-4">Games</h2>
-
-   <div class="row g-4" style="--bs-gutter-x: 2rem; --bs-gutter-y: 2rem;">
-
-    <!-- Wordle -->
-    <div class="col-md-4">
-        <div class="game-card">
-            <img src="wordle2.jpg" class="game-img">
-            <div class="game-body">
-                <h4>Wordle</h4>
-                <div class="rating">
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-half"></i>
-                    <span>4.8</span>
-                </div>
-                <p>Guess the secret word in limited tries.</p>
-                <a href="games/wordle.html" class="btn btn-dark play-btn">Play Now</a>
+<div class="container" style="max-width:1300px;">
+    <h2 class="games-title">Available Games</h2>
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4 mb-5">
+      <!-- Wordle -->
+      <div class="col">
+        <div class="game-card h-100">
+          <img src="wordle2.jpg" class="game-img" alt="Wordle">
+          <div class="game-body">
+            <h4>Wordle</h4>
+            <div class="rating">
+              <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i>
+              <span>4.8</span>
             </div>
+            <p>Guess the secret word in limited tries.</p>
+            <a href="games/wordle.html" class="btn btn-primary play-btn">Play Now</a>
+          </div>
         </div>
-    </div>
-
-    <!-- Quiz -->
-    <div class="col-md-4">
-        <div class="game-card">
-            <img src="quiz.jpg" class="game-img">
-            <div class="game-body">
-                <h4>Quiz Master</h4>
-                <div class="rating">
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-half"></i>
-                    <span>4.8</span>
-                </div>
-                <p>Test your knowledge across multiple topics.</p>
-                <a href="games/quiz.html" class="btn btn-dark play-btn">Start Quiz</a>
+      </div>
+      <!-- Quiz -->
+      <div class="col">
+        <div class="game-card h-100">
+          <img src="quiz.jpg" class="game-img" alt="Quiz Master">
+          <div class="game-body">
+            <h4>Quiz Master</h4>
+            <div class="rating">
+              <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i>
+              <span>4.8</span>
             </div>
+            <p>Test your knowledge across multiple topics.</p>
+            <a href="games/quiz.html" class="btn btn-primary play-btn">Start Quiz</a>
+          </div>
         </div>
-    </div>
-
-    <!-- Memory Game -->
-    <div class="col-md-4">
-        <div class="game-card">
-            <img src="word_flip.png" class="game-img">
-            <div class="game-body">
-                <h4>Memory Flip</h4>
-                <div class="rating">
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-half"></i>
-                    <i class="bi bi-star"></i>
-                    <span>3.3</span>
-                </div>
-                <p>Flip & match cards to boost your memory.</p>
-                <a href="games/memory.html" class="btn btn-dark play-btn">Play Game</a>
+      </div>
+      <!-- Memory Game -->
+      <div class="col">
+        <div class="game-card h-100">
+          <img src="word_flip.png" class="game-img" alt="Memory Flip">
+          <div class="game-body">
+            <h4>Memory Flip</h4>
+            <div class="rating">
+              <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i><i class="bi bi-star"></i>
+              <span>3.3</span>
             </div>
+            <p>Flip & match cards to boost your memory.</p>
+            <a href="games/memory.html" class="btn btn-primary play-btn">Play Game</a>
+          </div>
         </div>
-    </div>
-
-    <!-- Typing -->
-    <div class="col-md-4">
-        <div class="game-card">
-            <img src="typ.jpg" class="game-img">
-            <div class="game-body">
-                <h4>Typing Speed</h4>
-                <div class="rating">
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-half"></i>
-                    <i class="bi bi-star"></i>
-                    <span>3.5</span>
-                </div>
-                <p>Improve typing speed & accuracy.</p>
-                <a href="games/typing.html" class="btn btn-dark play-btn">Start Typing</a>
+      </div>
+      <!-- Typing -->
+      <div class="col">
+        <div class="game-card h-100">
+          <img src="typ.jpg" class="game-img" alt="Typing Speed">
+          <div class="game-body">
+            <h4>Typing Speed</h4>
+            <div class="rating">
+              <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i><i class="bi bi-star"></i>
+              <span>3.5</span>
             </div>
+            <p>Improve typing speed & accuracy.</p>
+            <a href="games/typing.html" class="btn btn-primary play-btn">Start Typing</a>
+          </div>
         </div>
-    </div>
-
-    <!-- Puzzle -->
-    <div class="col-md-4">
-        <div class="game-card">
-            <img src="puzzle.jpg" class="game-img">
-            <div class="game-body">
-                <h4>Puzzle Blocks</h4>
-                <div class="rating">
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-half"></i>
-                    <span>4.8</span>
-                </div>
-                <p>Move blocks & solve creative puzzles.</p>
-                <a href="games/puzzle.html" class="btn btn-dark play-btn">Play Puzzle</a>
+      </div>
+      <!-- Puzzle -->
+      <div class="col">
+        <div class="game-card h-100">
+          <img src="puzzle.jpg" class="game-img" alt="Puzzle Blocks">
+          <div class="game-body">
+            <h4>Puzzle Blocks</h4>
+            <div class="rating">
+              <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i>
+              <span>4.8</span>
             </div>
+            <p>Move blocks & solve creative puzzles.</p>
+            <a href="games/puzzle.html" class="btn btn-primary play-btn">Play Puzzle</a>
+          </div>
         </div>
-    </div>
-
-    <!-- Snake -->
-    <div class="col-md-4">
-        <div class="game-card">
-            <img src="snake.jpg" class="game-img">
-            <div class="game-body">
-                <h4>Snake And Ladder</h4>
-                <div class="rating">
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-half"></i>
-                    <i class="bi bi-star"></i>
-                    <span>3.8</span>
-                </div>
-                <p>Classic snake arcade – eat, grow, survive!</p>
-                <a href="games/snake.html" class="btn btn-dark play-btn">Play Snake</a>
+      </div>
+      <!-- Snake -->
+      <div class="col">
+        <div class="game-card h-100">
+          <img src="snake.jpg" class="game-img" alt="Snake And Ladder">
+          <div class="game-body">
+            <h4>Snake And Ladder</h4>
+            <div class="rating">
+              <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i><i class="bi bi-star"></i>
+              <span>3.8</span>
             </div>
+            <p>Classic snake arcade – eat, grow, survive!</p>
+            <a href="games/snake.html" class="btn btn-primary play-btn">Play Snake</a>
+          </div>
         </div>
-    </div>
-
-    <!-- Sudoku -->
-    <div class="col-md-4">
-        <div class="game-card">
-            <img src="soduku.jpg" class="game-img">
-            <div class="game-body">
-                <h4>Sudoku</h4>
-                <div class="rating">
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-half"></i>
-                    <i class="bi bi-star"></i>
-                    <span>3.5</span>
-                </div>
-                <p>Use logic to fill the number grid.</p>
-                <a href="games/sudoku.html" class="btn btn-dark play-btn">Play Now</a>
+      </div>
+      <!-- Sudoku -->
+      <div class="col">
+        <div class="game-card h-100">
+          <img src="soduku.jpg" class="game-img" alt="Sudoku">
+          <div class="game-body">
+            <h4>Sudoku</h4>
+            <div class="rating">
+              <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i><i class="bi bi-star"></i>
+              <span>3.5</span>
             </div>
+            <p>Use logic to fill the number grid.</p>
+            <a href="games/sudoku.html" class="btn btn-primary play-btn">Play Now</a>
+          </div>
         </div>
-    </div>
-
-    <!-- Tic Tac Toe -->
-    <div class="col-md-4">
-        <div class="game-card">
-            <img src="tiktactoe.jpg" class="game-img">
-            <div class="game-body">
-                <h4>Tic Tac Toe</h4>
-                <div class="rating">
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star"></i>
-                    <i class="bi bi-star"></i>
-                    <span>3.0</span>
-                </div>
-                <p>Classic game against friend or AI.</p>
-                <a href="games/tictactoe.html" class="btn btn-dark play-btn">Play</a>
+      </div>
+      <!-- Tic Tac Toe -->
+      <div class="col">
+        <div class="game-card h-100">
+          <img src="tiktactoe.jpg" class="game-img" alt="Tic Tac Toe">
+          <div class="game-body">
+            <h4>Tic Tac Toe</h4>
+            <div class="rating">
+              <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star"></i><i class="bi bi-star"></i>
+              <span>3.0</span>
             </div>
+            <p>Classic game against friend or AI.</p>
+            <a href="games/tictactoe.html" class="btn btn-primary play-btn">Play</a>
+          </div>
         </div>
-    </div>
-
-    <!-- Hangman -->
-    <div class="col-md-4">
-        <div class="game-card">
-            <img src="hangman.jpg" class="game-img">
-            <div class="game-body">
-                <h4>Hangman</h4>
-                <div class="rating">
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-half"></i>
-                    <i class="bi bi-star"></i>
-                    <span>3.8</span>
-                </div>
-                <p>Guess the hidden word carefully.</p>
-                <a href="games/hangman.html" class="btn btn-dark play-btn">Play Hangman</a>
+      </div>
+      <!-- Hangman -->
+      <div class="col">
+        <div class="game-card h-100">
+          <img src="hangman.jpg" class="game-img" alt="Hangman">
+          <div class="game-body">
+            <h4>Hangman</h4>
+            <div class="rating">
+              <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i><i class="bi bi-star"></i>
+              <span>3.8</span>
             </div>
+            <p>Guess the hidden word carefully.</p>
+            <a href="games/hangman.html" class="btn btn-primary play-btn">Play Hangman</a>
+          </div>
         </div>
-    </div>
-
-    <!-- Minesweeper -->
-    <div class="col-md-4">
-        <div class="game-card">
-            <img src="minesweeper.jpg" class="game-img">
-            <div class="game-body">
-                <h4>Minesweeper</h4>
-                <div class="rating">
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-half"></i>
-                    <i class="bi bi-star"></i>
-                    <span>3.7</span>
-                </div>
-                <p>Avoid the hidden mines using logic.</p>
-                <a href="games/minesweeper.html" class="btn btn-dark play-btn">Play Mines</a>
+      </div>
+      <!-- Minesweeper -->
+      <div class="col">
+        <div class="game-card h-100">
+          <img src="minesweeper.jpg" class="game-img" alt="Minesweeper">
+          <div class="game-body">
+            <h4>Minesweeper</h4>
+            <div class="rating">
+              <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i><i class="bi bi-star"></i>
+              <span>3.7</span>
             </div>
+            <p>Avoid the hidden mines using logic.</p>
+            <a href="games/minesweeper.html" class="btn btn-primary play-btn">Play Mines</a>
+          </div>
         </div>
-    </div>
-
-    <!-- 2048 -->
-    <div class="col-md-4">
-        <div class="game-card">
-            <img src="2048.jpg" class="game-img">
-            <div class="game-body">
-                <h4>2048</h4>
-                <div class="rating">
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-half"></i>
-                    <i class="bi bi-star"></i>
-                    <span>3.5</span>
-                </div>
-                <p>Merge tiles to reach the 2048 block.</p>
-                <a href="games/2048.html" class="btn btn-dark play-btn">Play 2048</a>
+      </div>
+      <!-- 2048 -->
+      <div class="col">
+        <div class="game-card h-100">
+          <img src="2048.jpg" class="game-img" alt="2048">
+          <div class="game-body">
+            <h4>2048</h4>
+            <div class="rating">
+              <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i><i class="bi bi-star"></i>
+              <span>3.5</span>
             </div>
+            <p>Merge tiles to reach the 2048 block.</p>
+            <a href="games/2048.html" class="btn btn-primary play-btn">Play 2048</a>
+          </div>
         </div>
-    </div>
-
-    <!-- Space Shooter -->
-    <div class="col-md-4">
-        <div class="game-card">
-            <img src="spaceshooter.jpg" class="game-img">
-            <div class="game-body">
-                <h4>Space Shooter</h4>
-                <div class="rating">
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star"></i>
-                    <span>4.0</span>
-                </div>
-                <p>Shoot asteroids and survive in space!</p>
-                <a href="games/spaceshooter.html" class="btn btn-dark play-btn">Start Shooting</a>
+      </div>
+      <!-- Space Shooter -->
+      <div class="col">
+        <div class="game-card h-100">
+          <img src="spaceshooter.jpg" class="game-img" alt="Space Shooter">
+          <div class="game-body">
+            <h4>Space Shooter</h4>
+            <div class="rating">
+              <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star"></i>
+              <span>4.0</span>
             </div>
+            <p>Shoot asteroids and survive in space!</p>
+            <a href="games/spaceshooter.html" class="btn btn-primary play-btn">Start Shooting</a>
+          </div>
         </div>
+      </div>
     </div>
-
 </div>
 
-</div>
-
+<!-- FOOTER -->
+<footer class="footer mt-auto">
+  <div class="container">
+    <div class="row align-items-top">
+      <div class="col-lg-4 mb-4 mb-lg-0">
+        <div class="footer-logo">BrainSpark</div>
+        <p style="color: #e3f2fd; max-width: 320px;font-size:1.1rem;">
+          Play, learn, and challenge your brain with an all-in-one games platform. Blending fun and mental growth, BrainSpark is your partner for smarter leisure.
+        </p>
+      </div>
+      <div class="col-lg-3 mb-4 mb-lg-0">
+        <div class="footer-links">
+          <div class="fw-bold mb-2">Explore</div>
+          <a href="#">Games</a>
+          <a href="#about">About Us</a>
+          <a href="#">FAQ</a>
+        </div>
+      </div>
+      <div class="col-lg-3 mb-4 mb-lg-0">
+        <div class="footer-links">
+          <div class="fw-bold mb-2">Support</div>
+          <a href="#">Contact</a>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </div>
+      </div>
+      <div class="col-lg-2 mb-0 d-flex align-items-lg-center">
+        <div>
+          <div class="fw-bold mb-2">Follow Us</div>
+          <div class="social-icons">
+            <a href="#"><i class="bi bi-facebook"></i></a>
+            <a href="#"><i class="bi bi-twitter-x"></i></a>
+            <a href="#"><i class="bi bi-instagram"></i></a>
+            <a href="#"><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom mt-3">
+      &copy; 2025 BrainSpark | Crafted with <i class="bi bi-lightning-fill" style="color:#faf636;"></i> for curious minds.
+    </div>
+  </div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
