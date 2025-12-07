@@ -27,7 +27,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         
         $_SESSION['username'] = $username;
         $_SESSION['exist']=true;
-        header("Location: welcome.php");
+        header("Location: newmodel.php");
         exit();
     }
     else{
