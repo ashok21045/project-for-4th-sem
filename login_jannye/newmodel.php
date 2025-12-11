@@ -355,7 +355,7 @@
               <span>4.8</span>
             </div>
             <p>Guess the secret word in limited tries.</p>
-            <div class="mt-auto"><a href="../games/wordle/w.html" class="btn btn-primary play-btn w-100">Play Now</a></div>
+            <div class="mt-auto"><a href="../games/wordle/w.php" class="btn btn-primary play-btn w-100">Play Now</a></div>
           </div>
         </div>
       </div>

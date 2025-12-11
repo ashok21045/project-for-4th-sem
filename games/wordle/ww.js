@@ -114,7 +114,11 @@ function processInput(e) {
 
     if (!gameOver && row == height) {
         gameOver = true;
+        document.getElementById("answer").classList.remove("yellow");
+        document.getElementById("answer").classList.add("red");
         document.getElementById("answer").innerText = word;
+        userData.currentstreak = 0;
+
     }
 }
 
@@ -133,7 +137,8 @@ function update() {
     console.log(guess);
 
     if (!guessList.includes(guess)) {
-        document.getElementById("answer").innerText = "Not in word list";
+        document.getElementById("answer").classList.add("yellow");
+        document.getElementById("answer").innerText = "Sorry! the word donot exists.";
         return;
     }
     
@@ -173,6 +178,15 @@ function update() {
 
         if (correct == width) {
             gameOver = true;
+            document.getElementById("answer").classList.remove("yellow");
+            document.getElementById("answer").classList.add("green");
+             document.getElementById("answer").innerText = "congratulations it is correct";
+            userData.currentStreak += 1;
+            userData.totalWins += 1;
+            if(userData.currentStreak>userData.highestStreak){
+                userData.highestStreak = userData.currentStreak;
+            }
+
         }
     }
 
@@ -206,3 +220,29 @@ function update() {
     col = 0; //start at 0 for new row
 }
 
+
+// update streak
+function saveStats(streak, highStreak, totalWins) {
+    fetch("w.php", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            streak: userData.currentStreak,
+            highStreak: userData.highestStreak,
+            totalWins: userData.totalWins
+        })
+    })
+    .then(res => res.text())
+    .then(data => console.log(data));
+}
+
+// Example call
+saveStats(userData.currentStreak, userData.highestStreak, userData.totalWins);
+
+
+// nexttt
+function reloadPage() {
+    location.reload();
+}

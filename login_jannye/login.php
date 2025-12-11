@@ -24,7 +24,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     $num = mysqli_num_rows($res);
     if($num==1){
         $exist = true;
-        
         $_SESSION['username'] = $username;
         $_SESSION['exist']=true;
         header("Location: newmodel.php");

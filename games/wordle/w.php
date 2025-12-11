@@ -1,0 +1,152 @@
+<?php
+session_start();
+require_once '../../partials/_test.php';  // your DB connection file
+
+// Assuming username is stored in session
+$username = $_SESSION['username'];
+
+// Prepare and execute the query safely
+$stmt = $conn->prepare("SELECT current_streak, higest_streak, total_wins FROM scoreboard WHERE username = ?");
+$stmt->bind_param("s", $username);
+$stmt->execute();
+$result = $stmt->get_result();
+
+// Fetch data
+if ($result->num_rows > 0) {
+    $row = $result->fetch_assoc();
+
+    $currentStreak = $row['current_streak'];
+    $highestStreak = $row['higest_streak'];
+    $totalWins = $row['total_wins'];
+} else {
+    // Default if no record found
+    $currentStreak = 0;
+    $highestStreak = 0;
+    $totalWins = 0;
+}
+?>
+<?php
+$user = [
+    "name" => $username,
+    "currentstreak" => $currentStreak,
+    "highStreak" => $highestStreak,
+    "totalwins" => $totalWins
+];
+?>
+
+<script>
+    const userData = <?php echo json_encode($user); ?>;
+</script>
+
+
+<html>
+    <head>
+        <title>Wordle</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale = 1.0">
+
+        <link rel="stylesheet" href="w.css">
+        <script src="getwords.php"></script>
+        <script src="ww.js"></script>
+        <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+        <script>
+$(document).ready(function(){
+  $(".but").click(function(){
+    $("#keyboardw").toggle();
+  });
+}); -->
+</script>
+   
+
+    </head>
+
+    <body>
+
+     <nav class="navbar">
+        <div class="logo-group">
+            <img src="../quiz/logo2.png" alt="BrainSpark Logo">
+            <span class="brand-text">BrainSpark</span>
+        </div>
+        
+        <div class="menu">
+            <a href="#">Home</a>
+            <a href="login.php">Games</a>
+            <a href="#">About</a>
+            <a href="login.php">Login</a>
+        </div>
+    </nav>
+   
+        
+
+       
+      <div id="title"><h1>Wordle</h1></div>
+        <div class="main">
+            <div id="board">
+            </div>
+            <div class="se">
+               <div class="result"> <h2 id="answer" class="red"></h2> </div>
+                <div class="record"> 
+                    <h3>Current streak: <?php echo $currentStreak; ?>🔥</h3>
+                    <h3>Highest streak:  <?php echo $highestStreak; ?>🔥</h3>
+                    <h3>Total correct:  <?php echo $totalWins; ?>🔥</h3>
+                    <button class="restart" onclick="reloadPage()">Next</button>
+
+                    
+
+                </div>
+               
+            </div>
+        </div>
+
+        <br>
+        <br><br>
+        <!-- <button class="but">hide keyboard</button> -->
+        <div id="keyboardw"></div>
+
+
+
+
+
+                <!-- save  score to the database -->
+         <?php
+
+require_once "../../partials/_test.php";   // your DB file
+
+// Only logged-in users allowed
+if (!isset($_SESSION['username'])) {
+    die("Not logged in");
+}
+
+$username = $_SESSION['username'];
+
+// Receive JSON from JS
+$data = json_decode(file_get_contents("php://input"), true);
+if ($data === null) {
+    echo "No JSON received";
+    exit;
+}
+$streak = $data['streak'];
+$highStreak = $data['highStreak'];
+$totalWins = $data['totalWins'];
+
+// Update stats in database
+$sql = "UPDATE scoredoard SET 
+            -- username= ?,
+            current_streak = ?, 
+            higest_streak = ?, 
+            total_wins = ?
+        WHERE username = ?";
+
+$stmt = $conn->prepare($sql);
+$stmt->bind_param("iiii", $streak, $highStreak, $totalWins, $username);
+
+if ($stmt->execute()) {
+    echo "Stats saved successfully";
+} else {
+    echo "Error: " . $conn->error;
+}
+?>
+
+    </body>
+</html>
