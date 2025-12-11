@@ -298,7 +298,7 @@
         <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
         <li class="nav-item"><a class="nav-link" href="#games">Games</a></li>
         <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-        <li class="nav-item"><a class="nav-link" onclick="window.location.href='logout.php'">Logout</a></li>
+        <li class="nav-item"><a class="nav-link" onclick="window.location.href='index.php'">Logout</a></li>
       </ul>
       <form class="d-flex ms-lg-4 nav-search">
         <i class="bi bi-search"></i>

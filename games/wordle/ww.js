@@ -117,7 +117,9 @@ function processInput(e) {
         document.getElementById("answer").classList.remove("yellow");
         document.getElementById("answer").classList.add("red");
         document.getElementById("answer").innerText = word;
-        userData.currentstreak = 0;
+        userData.currentStreak = 0;
+        console.log("Saving stats:", userData);
+        saveStats();
 
     }
 }
@@ -186,6 +188,8 @@ function update() {
             if(userData.currentStreak>userData.highestStreak){
                 userData.highestStreak = userData.currentStreak;
             }
+            console.log("Saving stats:", userData);
+            saveStats();
 
         }
     }
@@ -222,24 +226,22 @@ function update() {
 
 
 // update streak
-function saveStats(streak, highStreak, totalWins) {
-    fetch("w.php", {
+function saveStats() {
+    fetch("saveScore.php", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
         },
         body: JSON.stringify({
-            streak: userData.currentStreak,
-            highStreak: userData.highestStreak,
+            currentStreak: userData.currentStreak,
+            highestStreak: userData.highestStreak,
             totalWins: userData.totalWins
         })
     })
     .then(res => res.text())
-    .then(data => console.log(data));
+    .then(data => console.log("Server:", data));
 }
 
-// Example call
-saveStats(userData.currentStreak, userData.highestStreak, userData.totalWins);
 
 
 // nexttt

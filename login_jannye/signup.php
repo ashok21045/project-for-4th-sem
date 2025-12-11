@@ -21,9 +21,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     if(($cpassword==$password) && $exist==false){
 
     $sql = "INSERT INTO `user` (`username`, `password`, `cpassword`) VALUES ('$username', '$password', '$cpassword')";
+    $sql1 =  "INSERT INTO `scoreboard` (`username`) VALUES ('$username')";
     $result= mysqli_query($conn, $sql);
+    $result1= mysqli_query($conn, $sql1);
 
-    if($result){
+
+    if($result && $result1){
         $showalert = true;
         session_start();
         $_SESSION['showalert']= true;
