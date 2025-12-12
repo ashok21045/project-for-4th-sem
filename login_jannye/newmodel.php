@@ -50,6 +50,27 @@
             transition: all 0.15s;
             border-radius: 7px;
         }
+
+        /* Fix profile alignment */
+.navbar .dropdown img {
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+/* Reduce dropdown spacing */
+.dropdown-menu {
+    border-radius: 12px;
+    padding: 10px 0;
+    font-size: 1rem;
+}
+
+/* Hover effect */
+.dropdown-menu a:hover {
+    background: #f0f4fb;
+    color: #1750c3;
+}
+
+
         .navbar-nav .nav-link:hover, .navbar-nav .active>.nav-link {
             background: #f0f4fb;
             color: #1750c3 !important;
@@ -286,27 +307,77 @@
 <!-- NAVBAR -->
 <nav class="navbar navbar-expand-lg navbar-light fixed-top">
   <div class="container-fluid">
+    
     <a class="navbar-brand" href="#">
       <img src="../partials/logo2.png" alt="BrainSpark Logo">
       BrainSpark
     </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navBarToggle" aria-controls="navBarToggle" aria-expanded="false" aria-label="Toggle navigation">
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+      data-bs-target="#navBarToggle" aria-controls="navBarToggle"
+      aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
+
     <div class="collapse navbar-collapse" id="navBarToggle">
+
       <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
         <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
         <li class="nav-item"><a class="nav-link" href="#games">Games</a></li>
         <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-        <li class="nav-item"><a class="nav-link" onclick="window.location.href='index.php'">Logout</a></li>
       </ul>
-      <form class="d-flex ms-lg-4 nav-search">
+
+      <!-- Search -->
+      <form class="d-flex ms-lg-4 nav-search me-3">
         <i class="bi bi-search"></i>
         <input class="form-control me-2" type="search" placeholder="Search games..." aria-label="Search">
       </form>
+
+      <!-- Profile Dropdown -->
+      <div class="dropdown">
+        <a class="d-flex align-items-center text-decoration-none dropdown-toggle"
+           href="#" id="profileDropdown" data-bs-toggle="dropdown"
+           aria-expanded="false">
+          <?php
+require_once '../partials/_test.php';  // DB connection
+
+$username = $_SESSION['username'];
+
+// Fetch profile image from DB
+$sql = "SELECT image FROM user WHERE username = '$username'";
+$result = mysqli_query($conn, $sql);
+$row = mysqli_fetch_assoc($result);
+
+// If user has profile image, use it, otherwise show default
+$profileImg = (!empty($row['image'])) ? $row['image'] : 'uploads/default.png';
+?>
+<img src="<?php echo $profileImg; ?>" class="rounded-circle" width="40" height="40" style="object-fit: cover;">
+
+        </a>
+       <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="profileDropdown">
+  <li><a class="dropdown-item" href="#">My Profile</a></li>
+  <li><a class="dropdown-item" href="#">Settings</a></li>
+
+  <!-- New -->
+  <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#changePhotoModal">
+    Change Profile Picture
+  </a></li>
+
+  <!-- New: Upload custom image -->
+  <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#uploadPhotoModal">
+    Upload New Photo
+  </a></li>
+
+  <li><hr class="dropdown-divider"></li>
+  <li><a class="dropdown-item text-danger" href="index.php">Logout</a></li>
+</ul>
+
+      </div>
+
     </div>
   </div>
 </nav>
+
 <br><br><br><br>
 <!-- TRENDING GAMES BANNER -->
 <div class="slider-container">
@@ -844,6 +915,119 @@
     </div>
   </div>
 </footer>
+
+<!-- Choose Profile Picture Modal -->
+<div class="modal fade" id="changePhotoModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content" style="border-radius:20px;">
+      
+      <div class="modal-header">
+        <h5 class="modal-title">Choose Your Profile Picture</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+
+      <div class="modal-body">
+        <div class="row g-3">
+
+          <!-- Add your available profile images -->
+          <div class="col-4">
+            <img src="./photos/boy1.jpg" class="img-fluid selectable-profile" style="border-radius:12px; cursor:pointer;">
+          </div>
+          <div class="col-4">
+            <img src="./photos/boy2.jpg" class="img-fluid selectable-profile" style="border-radius:12px; cursor:pointer;">
+          </div>
+          <div class="col-4">
+            <img src="./photos/boy3.jpg" class="img-fluid selectable-profile" style="border-radius:12px; cursor:pointer;">
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Upload New Profile Photo Modal -->
+<div class="modal fade" id="uploadPhotoModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content" style="border-radius:20px;">
+
+      <div class="modal-header">
+        <h5 class="modal-title">Upload Profile Picture</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+
+      <div class="modal-body">
+        <form id="uploadForm" enctype="multipart/form-data">
+          <input type="file" name="profile" accept="image/*" class="form-control mb-3" required>
+          <button class="btn btn-primary w-100" type="submit">Upload</button>
+        </form>
+        <p id="uploadStatus" class="text-success mt-2"></p>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+<script>
+// ✦ For choosing existing picture
+document.querySelectorAll(".selectable-profile").forEach(img => {
+  img.addEventListener("click", function () {
+
+    let image = this.src;
+
+    document.querySelector("#profileDropdown img").src = image;
+
+    saveProfilePic(image);
+
+    const modal = bootstrap.Modal.getInstance(document.getElementById("changePhotoModal"));
+    modal.hide();
+  });
+});
+
+// ✦ For uploading custom picture
+document.getElementById("uploadForm").addEventListener("submit", function(e){
+  e.preventDefault();
+
+  let formData = new FormData(this);
+
+  fetch("upload_profile_pic.php", {
+    method: "POST",
+    body: formData
+  })
+  .then(res => res.json())
+  .then(data => {
+    if (data.status === "success") {
+      document.querySelector("#profileDropdown img").src = data.path;
+      document.getElementById("uploadStatus").innerText = "Uploaded Successfully!";
+      
+      saveProfilePic(data.path);
+
+      setTimeout(() => {
+        const modal = bootstrap.Modal.getInstance(document.getElementById("uploadPhotoModal"));
+        modal.hide();
+      }, 800);
+    }
+  });
+});
+
+
+// ✦ Save selected/uploaded picture to database
+function saveProfilePic(imagePath){
+  fetch("save_profile_pic.php", {
+    method: "POST",
+    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    body: "image=" + encodeURIComponent(imagePath)
+  });
+}
+</script>
+
+
+
+
+
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 <script>
     function logout(){
