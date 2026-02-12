@@ -6,7 +6,7 @@ header('Content-Type: application/javascript');
 $host = 'localhost';
 $user = 'root';
 $pass = ''; 
-$dbname = 'users'; 
+$dbname = 'brainsparkk'; 
 $table_name = 'words'; 
 
 // Establish Connection

@@ -435,7 +435,7 @@ $_SESSION['profilepic']=$profileImg;
       <div class="col h-100 d-flex align-items-stretch">
         <div class="game-card h-100 d-flex flex-column">
           <img src="./photos/wordle2.jpg" class="game-img" alt="Wordle">
-          <div class="game-body d-flex flex-column flex-grow-1" style="flex:1 1 auto; min-height:205px;">
+          <div class="game-body d-flex flex-column flex-grow-1" style="flex:1 1 auto; min-height:205px; width:330px;">
             <h4>Wordle</h4>
             <div class="rating">
               <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i>
@@ -450,7 +450,7 @@ $_SESSION['profilepic']=$profileImg;
       <div class="col h-100 d-flex align-items-stretch">
         <div class="game-card h-100 d-flex flex-column">
           <img src="./photos/quiz.jpg" class="game-img" alt="Quiz Master">
-          <div class="game-body d-flex flex-column flex-grow-1" style="flex:1 1 auto; min-height:205px;">
+          <div class="game-body d-flex flex-column flex-grow-1" style="flex:1 1 auto; min-height:205px; width:330px;">
             <h4>Quiz Master</h4>
             <div class="rating">
               <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i>
@@ -465,7 +465,7 @@ $_SESSION['profilepic']=$profileImg;
       <div class="col h-100 d-flex align-items-stretch">
         <div class="game-card h-100 d-flex flex-column">
           <img src="./photos/word_flip.png" class="game-img" alt="Memory Flip">
-          <div class="game-body d-flex flex-column flex-grow-1" style="flex:1 1 auto; min-height:205px;">
+          <div class="game-body d-flex flex-column flex-grow-1" style="flex:1 1 auto; min-height:205px; width:330px;">
             <h4>Memory Flip</h4>
             <div class="rating">
               <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i><i class="bi bi-star"></i>
@@ -481,7 +481,7 @@ $_SESSION['profilepic']=$profileImg;
       <div class="col h-100 d-flex align-items-stretch">
         <div class="game-card h-100 d-flex flex-column">
           <img src="./photos/tiktactoe.jpg" class="game-img" alt="Tic Tac Toe">
-          <div class="game-body d-flex flex-column flex-grow-1" style="flex:1 1 auto; min-height:205px;">
+          <div class="game-body d-flex flex-column flex-grow-1" style="flex:1 1 auto; min-height:205px; width:330px;">
             <h4>Tic Tac Toe</h4>
             <div class="rating">
               <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star"></i><i class="bi bi-star"></i>
@@ -496,7 +496,7 @@ $_SESSION['profilepic']=$profileImg;
       <div class="col h-100 d-flex align-items-stretch">
         <div class="game-card h-100 d-flex flex-column">
           <img src="./photos/hangman.jpg" class="game-img" alt="Hangman">
-          <div class="game-body d-flex flex-column flex-grow-1" style="flex:1 1 auto; min-height:205px;">
+          <div class="game-body d-flex flex-column flex-grow-1" style="flex:1 1 auto; min-height:205px; width:330px;">
             <h4>Hangman</h4>
             <div class="rating">
               <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i><i class="bi bi-star"></i>
@@ -512,7 +512,7 @@ $_SESSION['profilepic']=$profileImg;
       <div class="col h-100 d-flex align-items-stretch">
         <div class="game-card h-100 d-flex flex-column">
           <img src="./photos/spaceshooter.jpg" class="game-img" alt="Space Shooter">
-          <div class="game-body d-flex flex-column flex-grow-1" style="flex:1 1 auto; min-height:205px;">
+          <div class="game-body d-flex flex-column flex-grow-1" style="flex:1 1 auto; min-height:205px; width:330px;">
             <h4>Space Shooter</h4>
             <div class="rating">
               <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star"></i>
@@ -538,7 +538,7 @@ $_SESSION['profilepic']=$profileImg;
       <div class="col h-100 d-flex align-items-stretch">
         <div class="game-card h-100 d-flex flex-column">
           <img src="./photos/wordle2.jpg" class="game-img" alt="Wordle">
-          <div class="game-body d-flex flex-column flex-grow-1" style="flex:1 1 auto; min-height:205px;">
+          <div class="game-body d-flex flex-column flex-grow-1" style="flex:1 1 auto; min-height:205px; width:330px;">
             <h4>Wordle</h4>
             <div class="rating">
               <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i>
@@ -553,7 +553,7 @@ $_SESSION['profilepic']=$profileImg;
       <div class="col h-100 d-flex align-items-stretch">
         <div class="game-card h-100 d-flex flex-column">
           <img src="./photos/quiz.jpg" class="game-img" alt="Quiz Master">
-          <div class="game-body d-flex flex-column flex-grow-1" style="flex:1 1 auto; min-height:205px;">
+          <div class="game-body d-flex flex-column flex-grow-1" style="flex:1 1 auto; min-height:205px; width:330px;">
             <h4>Quiz Master</h4>
             <div class="rating">
               <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i>
@@ -568,7 +568,7 @@ $_SESSION['profilepic']=$profileImg;
       <div class="col h-100 d-flex align-items-stretch">
         <div class="game-card h-100 d-flex flex-column">
           <img src="./photos/word_flip.png" class="game-img" alt="Memory Flip">
-          <div class="game-body d-flex flex-column flex-grow-1" style="flex:1 1 auto; min-height:205px;">
+          <div class="game-body d-flex flex-column flex-grow-1" style="flex:1 1 auto; min-height:205px; width:330px;">
             <h4>Memory Flip</h4>
             <div class="rating">
               <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i><i class="bi bi-star"></i>
@@ -584,7 +584,7 @@ $_SESSION['profilepic']=$profileImg;
       <div class="col h-100 d-flex align-items-stretch">
         <div class="game-card h-100 d-flex flex-column">
           <img src="./photos/puzzle.jpg" class="game-img" alt="Puzzle Blocks">
-          <div class="game-body d-flex flex-column flex-grow-1" style="flex:1 1 auto; min-height:205px;">
+          <div class="game-body d-flex flex-column flex-grow-1" style="flex:1 1 auto; min-height:205px; width:330px;">
             <h4>Puzzle Blocks</h4>
             <div class="rating">
               <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i>
@@ -599,7 +599,7 @@ $_SESSION['profilepic']=$profileImg;
       <div class="col h-100 d-flex align-items-stretch">
         <div class="game-card h-100 d-flex flex-column">
           <img src="./photos/snake.png" class="game-img" alt="Snake And Ladder">
-          <div class="game-body d-flex flex-column flex-grow-1" style="flex:1 1 auto; min-height:205px;">
+          <div class="game-body d-flex flex-column flex-grow-1" style="flex:1 1 auto; min-height:205px; width:330px;">
             <h4>Snake And Ladder</h4>
             <div class="rating">
               <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i><i class="bi bi-star"></i>
@@ -614,7 +614,7 @@ $_SESSION['profilepic']=$profileImg;
       <div class="col h-100 d-flex align-items-stretch">
         <div class="game-card h-100 d-flex flex-column">
           <img src="./photos/soduku.jpg" class="game-img" alt="Sudoku">
-          <div class="game-body d-flex flex-column flex-grow-1" style="flex:1 1 auto; min-height:205px;">
+          <div class="game-body d-flex flex-column flex-grow-1" style="flex:1 1 auto; min-height:205px; width:330px;">
             <h4>Sudoku</h4>
             <div class="rating">
               <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i><i class="bi bi-star"></i>
@@ -629,7 +629,7 @@ $_SESSION['profilepic']=$profileImg;
       <div class="col h-100 d-flex align-items-stretch">
         <div class="game-card h-100 d-flex flex-column">
           <img src="./photos/tiktactoe.jpg" class="game-img" alt="Tic Tac Toe">
-          <div class="game-body d-flex flex-column flex-grow-1" style="flex:1 1 auto; min-height:205px;">
+          <div class="game-body d-flex flex-column flex-grow-1" style="flex:1 1 auto; min-height:205px; width:330px;">
             <h4>Tic Tac Toe</h4>
             <div class="rating">
               <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star"></i><i class="bi bi-star"></i>
@@ -644,7 +644,7 @@ $_SESSION['profilepic']=$profileImg;
       <div class="col h-100 d-flex align-items-stretch">
         <div class="game-card h-100 d-flex flex-column">
           <img src="./photos/hangman.jpg" class="game-img" alt="Hangman">
-          <div class="game-body d-flex flex-column flex-grow-1" style="flex:1 1 auto; min-height:205px;">
+          <div class="game-body d-flex flex-column flex-grow-1" style="flex:1 1 auto; min-height:205px; width:330px;">
             <h4>Hangman</h4>
             <div class="rating">
               <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i><i class="bi bi-star"></i>
@@ -661,245 +661,58 @@ $_SESSION['profilepic']=$profileImg;
 
 
 
-<!-- all games container -->
+<?php
+// Ensure your database connection is included
+include '../partials/_test.php';
+
+// Fetch only 'Active' games
+$query = "SELECT * FROM games WHERE status = 'Active' ORDER BY game_id DESC";
+$res = mysqli_query($conn, $query);
+?>
+
 <div class="container" style="max-width:1450px; margin-top:-70px;" id="games">
-  <br><br>
+    <br><br>
     <h2 class="games-title">All Available Games</h2>
     <br>
     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4 mb-5">
-      <!-- Wordle -->
-      <div class="col h-100 d-flex align-items-stretch">
-        <div class="game-card h-100 d-flex flex-column">
-          <img src="./photos/wordle2.jpg" class="game-img" alt="Wordle">
-          <div class="game-body d-flex flex-column flex-grow-1" style="flex:1 1 auto; min-height:205px;">
-            <h4>Wordle</h4>
-            <div class="rating">
-              <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i>
-              <span>4.8</span>
+        
+        <?php 
+        // Start the loop to repeat the card for every game in the DB
+        while ($game = mysqli_fetch_assoc($res)) { 
+            // Handle image path: use uploaded image or a default placeholder
+            $imagePath = !empty($game['image']) ? '../admin/'.$game['image'] : './photos/default_game.jpg';
+        ?>
+            
+            <div class="col h-100 d-flex align-items-stretch">
+                <div class="game-card h-100 d-flex flex-column">
+                    <img src="<?= $imagePath ?>" class="game-img" alt="<?= htmlspecialchars($game['game']) ?>">
+                    
+                    <div class="game-body d-flex flex-column flex-grow-1" style="flex:1 1 auto; min-height:205px; width:330px;">
+                        <h4><?= htmlspecialchars($game['game']) ?></h4>
+                        
+                        <div class="rating">
+                            <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i>
+                            <span>4.8</span>
+                        </div>
+                        
+                        <p>Experience the thrill of <?= htmlspecialchars($game['game']) ?>!</p>
+                        
+                        <div class="mt-auto">
+                            <a href="<?= htmlspecialchars($game['link']) ?>"
+                               class="btn btn-primary play-btn w-100 game-link"
+                               data-title="<?= htmlspecialchars($game['game']) ?>"
+                               data-url="<?= htmlspecialchars($game['link']) ?>">
+                               Play Now
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <p>Guess the secret word in limited tries.</p>
-            <div class="mt-auto"><a href="../games/wordle/w.php"
-   class="btn btn-primary play-btn w-100 game-link"
-   data-title="wordle"
-   data-url="../games/wordle/w.php">
-   Play Now
-</a>
-</div>
-          </div>
-        </div>
-      </div>
-      <!-- Quiz -->
-      <div class="col h-100 d-flex align-items-stretch">
-        <div class="game-card h-100 d-flex flex-column">
-          <img src="./photos/quiz.jpg" class="game-img" alt="Quiz Master">
-          <div class="game-body d-flex flex-column flex-grow-1" style="flex:1 1 auto; min-height:205px;">
-            <h4>Quiz Master</h4>
-            <div class="rating">
-              <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i>
-              <span>4.8</span>
-            </div>
-            <p>Test your knowledge across multiple topics.</p>
-            <div class="mt-auto"><a href="https://www.proprofs.com/quiz-school/story.php?title=kbc1"
-   class="btn btn-primary play-btn w-100 game-link"
-   data-title="Quiz"
-   data-url="https://www.proprofs.com/quiz-school/story.php?title=kbc1">
-   Start Quiz
-</a>
-</div>
-          </div>
-        </div>
-      </div>
-      <!-- Memory Game -->
-      <div class="col h-100 d-flex align-items-stretch">
-        <div class="game-card h-100 d-flex flex-column">
-          <img src="./photos/word_flip.png" class="game-img" alt="Memory Flip">
-          <div class="game-body d-flex flex-column flex-grow-1" style="flex:1 1 auto; min-height:205px;">
-            <h4>Memory Flip</h4>
-            <div class="rating">
-              <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i><i class="bi bi-star"></i>
-              <span>3.3</span>
-            </div>
-            <p>Flip & match cards to boost your memory.</p>
-            <div class="mt-auto"><a href="https://asklistenlearn.org/play/memory-flip/" class="btn btn-primary play-btn w-100 game-link"
-   data-title="Memory Game"
-   data-url="https://asklistenlearn.org/play/memory-flip/">Play Game</a></div>
-          </div>
-        </div>
-      </div>
-      <!-- Typing -->
-      <div class="col h-100 d-flex align-items-stretch">
-        <div class="game-card h-100 d-flex flex-column">
-          <img src="./photos/typ.jpg" class="game-img" alt="Typing Speed">
-          <div class="game-body d-flex flex-column flex-grow-1" style="flex:1 1 auto; min-height:205px;">
-            <h4>Typing Speed</h4>
-            <div class="rating">
-              <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i><i class="bi bi-star"></i>
-              <span>3.5</span>
-            </div>
-            <p>Improve typing speed & accuracy.</p>
-            <div class="mt-auto"><a href="games/typing.html" class="btn btn-primary play-btn w-100 game-link"
-   data-title="typing"
-   data-url="../games/wordle/w.php">
-   Play Now
-</a></div>
-          </div>
-        </div>
-      </div>
-      <!-- Puzzle -->
-      <div class="col h-100 d-flex align-items-stretch">
-        <div class="game-card h-100 d-flex flex-column">
-          <img src="./photos/puzzle.jpg" class="game-img" alt="Puzzle Blocks">
-          <div class="game-body d-flex flex-column flex-grow-1" style="flex:1 1 auto; min-height:205px;">
-            <h4>Puzzle Blocks</h4>
-            <div class="rating">
-              <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i>
-              <span>4.8</span>
-            </div>
-            <p>Move blocks & solve creative puzzles.</p>
-            <div class="mt-auto"><a href="https://www.crazygames.com/game/block-puzzle" class="btn btn-primary play-btn w-100 game-link"
-   data-title="Puzzle Blocks"
-   data-url="https://www.crazygames.com/game/block-puzzle">
-   Play Now
-</a></div>
-          </div>
-        </div>
-      </div>
-      <!-- Snake -->
-      <div class="col h-100 d-flex align-items-stretch">
-        <div class="game-card h-100 d-flex flex-column">
-          <img src="./photos/snake.jpg" class="game-img" alt="Snake And Ladder">
-          <div class="game-body d-flex flex-column flex-grow-1" style="flex:1 1 auto; min-height:205px;">
-            <h4>Snake And Ladder</h4>
-            <div class="rating">
-              <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i><i class="bi bi-star"></i>
-              <span>3.8</span>
-            </div>
-            <p>Classic snake arcade – eat, grow, survive!</p>
-            <div class="mt-auto"><a href="https://www.crazygames.com/game/snakes-and-ladders" class="btn btn-primary play-btn w-100 game-link"
-   data-title="snake and ladder"
-   data-url="https://www.crazygames.com/game/snakes-and-ladders">
-   Play Now
-</a></div>
-          </div>
-        </div>
-      </div>
-      <!-- Sudoku -->
-      <div class="col h-100 d-flex align-items-stretch">
-        <div class="game-card h-100 d-flex flex-column">
-          <img src="./photos/soduku.jpg" class="game-img" alt="Sudoku">
-          <div class="game-body d-flex flex-column flex-grow-1" style="flex:1 1 auto; min-height:205px;">
-            <h4>Sudoku</h4>
-            <div class="rating">
-              <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i><i class="bi bi-star"></i>
-              <span>3.5</span>
-            </div>
-            <p>Use logic to fill the number grid.</p>
-            <div class="mt-auto"><a href="https://sudoku.com/" class="btn btn-primary play-btn w-100 game-link"
-   data-title="Sudoku"
-   data-url="https://sudoku.com/">
-   Play Now
-</a></div>
-          </div>
-        </div>
-      </div>
-      <!-- Tic Tac Toe -->
-      <div class="col h-100 d-flex align-items-stretch">
-        <div class="game-card h-100 d-flex flex-column">
-          <img src="./photos/tiktactoe.jpg" class="game-img" alt="Tic Tac Toe">
-          <div class="game-body d-flex flex-column flex-grow-1" style="flex:1 1 auto; min-height:205px;">
-            <h4>Tic Tac Toe</h4>
-            <div class="rating">
-              <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star"></i><i class="bi bi-star"></i>
-              <span>3.0</span>
-            </div>
-            <p>Classic game against friend.Only two players can play.</p>
-            <div class="mt-auto"><a href="https://playtictactoe.org/" class="btn btn-primary play-btn w-100 game-link"
-   data-title="Tic Tac Toe"
-   data-url="https://playtictactoe.org/">
-   Play Now
-</a></div>
-          </div>
-        </div>
-      </div>
-      <!-- Hangman -->
-      <div class="col h-100 d-flex align-items-stretch">
-        <div class="game-card h-100 d-flex flex-column">
-          <img src="./photos/hangman.jpg" class="game-img" alt="Hangman">
-          <div class="game-body d-flex flex-column flex-grow-1" style="flex:1 1 auto; min-height:205px;">
-            <h4>Hangman</h4>
-            <div class="rating">
-              <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i><i class="bi bi-star"></i>
-              <span>3.8</span>
-            </div>
-            <p>Guess the hidden word carefully using your Mind.</p>
-            <div class="mt-auto"><a href="https://poki.com/tl/g/hangman#utm_source=redirect-en-tl" class="btn btn-primary play-btn w-100 game-link"
-   data-title="hungman"
-   data-url="https://poki.com/tl/g/hangman#utm_source=redirect-en-tl">
-   Play Now
-</a></div>
-          </div>
-        </div>
-      </div>
-      <!-- Minesweeper -->
-      <div class="col h-100 d-flex align-items-stretch">
-        <div class="game-card h-100 d-flex flex-column">
-          <img src="./photos/minesweeper.jpg" class="game-img" alt="Minesweeper">
-          <div class="game-body d-flex flex-column flex-grow-1" style="flex:1 1 auto; min-height:205px;">
-            <h4>Minesweeper</h4>
-            <div class="rating">
-              <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i><i class="bi bi-star"></i>
-              <span>3.7</span>
-            </div>
-            <p>Avoid the hidden mines using logic.</p>
-            <div class="mt-auto"><a href="https://minesweeperonline.com/" class="btn btn-primary play-btn w-100 game-link"
-   data-title="minesweeper"
-   data-url="https://minesweeperonline.com/">
-   Play Now
-</a></div>
-          </div>
-        </div>
-      </div>
-      <!-- 2048 -->
-      <div class="col h-100 d-flex align-items-stretch">
-        <div class="game-card h-100 d-flex flex-column">
-          <img src="./photos/2048.jpg" class="game-img" alt="2048">
-          <div class="game-body d-flex flex-column flex-grow-1" style="flex:1 1 auto; min-height:205px;">
-            <h4>2048</h4>
-            <div class="rating">
-              <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i><i class="bi bi-star"></i>
-              <span>3.5</span>
-            </div>
-            <p>Merge tiles to reach the 2048 block.</p>
-            <div class="mt-auto"><a href="https://2048game.com/?ref=google-search-classic&gad_campaignid=12688850565" class="btn btn-primary play-btn w-100 game-link"
-   data-title="2048"
-   data-url="https://2048game.com/?ref=google-search-classic&gad_campaignid=12688850565">
-   Play Now
-</a></div>
-          </div>
-        </div>
-      </div>
-      <!-- Space Shooter -->
-      <div class="col h-100 d-flex align-items-stretch">
-        <div class="game-card h-100 d-flex flex-column">
-          <img src="./photos/spaceshooter.jpg" class="game-img" alt="Space Shooter">
-          <div class="game-body d-flex flex-column flex-grow-1" style="flex:1 1 auto; min-height:205px;">
-            <h4>Space Shooter</h4>
-            <div class="rating">
-              <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star"></i>
-              <span>4.0</span>
-            </div>
-            <p>Shoot asteroids and survive in space!</p>
-            <div class="mt-auto"><a href="https://www.crazygames.com/game/starblastio" class="btn btn-primary play-btn w-100 game-link"
-   data-title="space shooter"
-   data-url="https://www.crazygames.com/game/starblastio">
-   Play Now
-</a></div>
-          </div>
-        </div>
-      </div>
+
+        <?php } // End of loop ?>
+
     </div>
 </div>
-
 <!-- ABOUT SECTION -->
 <section id="about" style="padding:80px 0; background:#f7faff;">
   <div class="container" style="max-width:1100px;">

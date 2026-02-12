@@ -9,43 +9,42 @@ if (isset($_SESSION['showalert']) AND $_SESSION['showalert']== true) {
     </div>';
     unset($_SESSION['showalert']);
 }
-
 // logging in
-$alert= false;
-if($_SERVER["REQUEST_METHOD"] == "POST"){
+$alert = false;
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
     include '../partials/_test.php';
 
-    $username = $_POST["username"];
+    $username = trim($_POST["username"]);
     $password = $_POST["password"];
-    $exist = false;
-    
-    $sql1= "Select * from user where username= '$username'";
-    $res = mysqli_query($conn, $sql1);
-    $num = mysqli_num_rows($res);
-  if ($num == 1) {
 
-        // ✅ fetch user row
-        $row = mysqli_fetch_assoc($res);
+    // ✅ prepared statement
+    $stmt = $conn->prepare("SELECT * FROM user WHERE username = ?");
+    $stmt->bind_param("s", $username);
+    $stmt->execute();
+    $res = $stmt->get_result();
 
-        // ✅ verify hashed password
+    if ($res->num_rows == 1) {
+
+        $row = $res->fetch_assoc();
+
+        // ✅ password verification
         if (password_verify($password, $row['password'])) {
 
-            $_SESSION['username'] = $username;
+            $_SESSION['username'] = $row['username'];
             $_SESSION['exist'] = true;
 
             header("Location: newmodel.php");
             exit();
-        }
-        else {
+        } else {
             $alert = true;
         }
-    }
-    else {
+
+    } else {
         $alert = true;
     }
-
-
 }
+
 
 ?>
 <!DOCTYPE html>

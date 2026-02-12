@@ -1,0 +1,47 @@
+body {
+    margin: 0;
+    background: #ffffff;
+    font-family: Arial, sans-serif;
+}
+
+.navbara {
+    height: 70px;
+    background: white;
+    border-bottom: 1px solid #dcdcdc;
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    padding: 0 35px;
+}
+
+.left-section {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo {
+    height: 40px;
+    width: 40px;
+}
+
+.company-name {
+    font-size: 26px;
+    font-weight: bold;
+}
+
+.menu a {
+    text-decoration: none;
+    font-size: 20px;
+    margin-left: 30px;
+    color: #333;
+    
+}
+
+.menu a:hover {
+    color: #0073ff;
+}
+.menu{
+    display: flex;
+    gap: 50px;
+}

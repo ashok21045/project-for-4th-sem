@@ -1,15 +1,12 @@
 <?php
-$host = "localhost";
-$user = "root";
-$pass = "";
-$db   = "users";
+$servername = "localhost";
+$username   = "root";
+$password   = "";
+$database   = "brainsparkk";
 
-$conn =mysqli_connect($host, $user, $pass, $db);
-if ($conn){
-   $success= true;
-}
-else{
-    die("error". mysqli_connect_error());
-}
+$conn = new mysqli($servername, $username, $password, $database);
 
+if ($conn->connect_error) {
+    die("Database connection failed!");
+}
 ?>
