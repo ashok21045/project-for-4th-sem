@@ -31,6 +31,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     elseif ($password !== $cpassword) {
         $showfail = true;
     }
+    elseif(empty(trim($name))){
+        $showinvalid = "invalid Username";
+    }
 
     else {
 
